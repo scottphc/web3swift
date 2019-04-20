@@ -184,7 +184,7 @@ extension ABIv2.Element.Function {
     
     /// Function hash
     public var methodEncoding: Data {
-        return signature.data(using: .ascii)!.keccak256()[0..<4]
+        return signature.keccak256()[0..<4]
     }
 }
 

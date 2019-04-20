@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 extension String {
     subscript(range: PartialRangeUpTo<Int>) -> Substring {
@@ -21,7 +22,7 @@ extension String {
 extension String {
     /// - Returns: keccak256 hash of string
     public func keccak256() -> Data {
-        return data.keccak256()
+        return data.sha3(.keccak256)
     }
     var data: Data {
         return Data(utf8)
